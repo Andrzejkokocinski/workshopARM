@@ -4,7 +4,7 @@
     "parameters": {
         "storageName":{
             "type":"string",
-            "defaultValue": "mifurmsa"
+            "defaultValue": "nested01"
         },
         "storageType":{
             "type": "string",
