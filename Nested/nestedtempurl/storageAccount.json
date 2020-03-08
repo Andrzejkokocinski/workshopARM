@@ -4,7 +4,7 @@
     "parameters": {
         "storageName":{
             "type":"string",
-            "defaultValue": "nested01"
+            "defaultValue": "nestedworkshopak01"
         },
         "storageType":{
             "type": "string",
