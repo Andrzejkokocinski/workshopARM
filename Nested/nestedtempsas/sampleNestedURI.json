@@ -1,0 +1,49 @@
+  
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageType": {
+            "type": "string",
+            "allowedValues": [
+              "Standard_LRS",
+              "Standard_GRS"
+            ],
+            "defaultValue": "Standard_LRS",
+            "metadata": {
+              "description": "The type of replication to use for the storage account."
+            }
+        }
+    },
+    "variables": { 
+        "storageName":"fpsa01"
+     },
+    "functions": [  ],
+    "resources": [
+        {
+           "apiVersion": "2017-05-10",
+           "name": "linkedTemplate",
+           "type": "Microsoft.Resources/deployments",
+           "properties": {
+             "mode": "Incremental",
+             "templateLink": {
+                "uri":"https://storakworkshop01.blob.core.windows.net/nested/storageaccount.json?sp=r&st=2020-03-08T17:23:17Z&se=2020-05-26T00:23:17Z&spr=https&sv=2019-02-02&sr=b&sig=NvReXnWrVu4vYZtRLnnrVq7YMVYFmXLd9H0YXZEsGSw%3D",
+                "contentVersion":"1.0.0.0"
+             },
+             "parameters": {
+                "indexValue":{"value": "4"}
+              }
+           }
+        }
+      ],
+    "outputs": {
+      "messageFromLinkedTemplate": {
+        "type": "string",
+        "value": "[reference('linkedTemplate').outputs.greetingMessage.value]"
+      },
+      "otherGreatOutputMessage":{
+        "type":"string",
+        "value": "[reference('linkedTemplate').outputs.bloblink.value]"
+      }
+    }
+}
