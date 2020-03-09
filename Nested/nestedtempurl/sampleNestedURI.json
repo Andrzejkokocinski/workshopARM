@@ -59,26 +59,4 @@
     "outputs": {  }
 }
 
-    "functions": [  ],
-    "resources": [
-        {
-           "apiVersion": "2017-05-10",
-           "name": "linkedTemplate",
-           "type": "Microsoft.Resources/deployments",
-           "properties": {
-             "mode": "Incremental",
-             "templateLink": {
-                "uri":"https://storakworkshop01.blob.core.windows.net/nested/storageaccount.json",
-                "contentVersion":"1.0.0.0"
-             },
-             "parameters": {
-                "indexValue":{"value": "2"}
-              }
-               "variables": { 
-        "storageName":"neste02"
-     },
-           }
-        }
-      ],
-    "outputs": {  }
-}
+  
