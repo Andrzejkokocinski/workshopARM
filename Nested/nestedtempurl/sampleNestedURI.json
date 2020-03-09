@@ -15,7 +15,7 @@
         }
     },
     "variables": { 
-        "storageName":"storworksa01"
+        "storageName":"worksa01"
      },
     "functions": [  ],
     "resources": [
