@@ -46,13 +46,10 @@
              "templateLink": {
                 "uri":"https://storakworkshop01.blob.core.windows.net/nested/storageaccount.json",
                 "contentVersion":"1.0.0.0"
-             },
+               },
              "parameters": {
                 "indexValue":{"value": "2"}
-              },
-               "variables": { 
-        "storageName":"neste02"
-     }
+              }
            }
         }
       ],
